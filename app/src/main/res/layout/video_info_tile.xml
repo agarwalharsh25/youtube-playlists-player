@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingBottom="8dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner">
+        <ImageView
+            android:id="@+id/imageTile"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingStart="4dp"
+            android:layout_toRightOf="@+id/imageTile"
+            android:layout_toEndOf="@+id/imageTile">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="2"
+                android:textColor="@color/colorTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/lato" />
+            <TextView
+                android:id="@+id/playlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:textColor="@color/colorTextColor"
+                android:lines="1"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                app:fontFamily="@font/lato" />
+            <TextView
+                android:id="@+id/views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playlist"
+                android:textColor="@color/colorTextColor"
+                android:lines="1"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                app:fontFamily="@font/lato" />
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/views"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="2"
+                android:paddingTop="2dp"
+                android:textColor="@color/colorTextColor"
+                android:textSize="10sp"
+                app:fontFamily="@font/lato" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

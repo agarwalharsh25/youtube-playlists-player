@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundDark"
+    tools:context=".VideoPlayActivity">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:tint="@color/colorBackButton"
+        android:background="@color/colorBackgroundDark"
+        app:srcCompat="@drawable/ic_back" />
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youtube_view"
+        android:padding="6dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackgroundLight"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/videoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/videoViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoTitle"
+                android:textColor="@color/colorTextColor"
+                android:textSize="12sp"
+                app:fontFamily="@font/lato" />
+
+            <RelativeLayout
+                android:id="@+id/playlistTile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoViews"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp">
+
+                <ImageView
+                    android:id="@+id/playlistIcon"
+                    android:layout_width="@dimen/cards_button_width"
+                    android:layout_height="@dimen/cards_button_height"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/playlistTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/playlistIcon"
+                    android:layout_toEndOf="@+id/playlistIcon"
+                    android:paddingLeft="4dp"
+                    android:paddingStart="4dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/lato" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/videoDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/playlistTile"
+                android:paddingTop="4dp"
+                android:textColor="@color/colorTextColor"
+                app:fontFamily="@font/lato" />
+
+            <TextView
+                android:id="@+id/videoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoDate"
+                android:paddingTop="4dp"
+                android:paddingBottom="30dp"
+                android:autoLink="web"
+                android:textColor="@color/colorTextColor"
+                android:textColorLink="@color/colorBlue"
+                app:fontFamily="@font/lato" />
+
+            <RelativeLayout
+                android:id="@+id/relatedVideosRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/videoDescription"
+                android:paddingBottom="30dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/relatedVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/related_videos"
+                    android:textColor="@color/colorTextColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="10dp"
+                    app:fontFamily="@font/lato" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/relatedVideosListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relatedVideos" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
